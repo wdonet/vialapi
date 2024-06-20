@@ -1,0 +1,25 @@
+import Subject, {SEX, SUBJECT_STATUS} from "../../definitions/subjects";
+
+export const subjects: Subject[] = [
+  { id: 1, name: 'Ozz', sex: SEX['Male'], diagnosis: 'here diagnosis', date: '2021-09-23 09:23', status: SUBJECT_STATUS['In Screening'] },
+  { id: 2, name: 'Mark', sex: SEX['Male'], diagnosis: 'here diagnosis', date: '2023-10-18 10:56', status: SUBJECT_STATUS['Failed'] },
+  { id: 3, name: 'Peter', sex: SEX['Male'], diagnosis: 'here diagnosis', date: '2020-07-02 23:59', status: SUBJECT_STATUS['Enrolled'] },
+  { id: 4, name: 'Martha', sex: SEX['Female'], diagnosis: 'here diagnosis', date: '2024-01-20 15:55', status: SUBJECT_STATUS['Failed'] },
+  { id: 5, name: 'Gaby', sex: SEX['Female'], diagnosis: 'here diagnosis', date: '2021-09-23 09:23', status: SUBJECT_STATUS['Failed'] },
+  { id: 6, name: 'Trent', sex: SEX['Male'], diagnosis: 'here diagnosis', date: '2023-10-18 10:56', status: SUBJECT_STATUS['Failed'] },
+  { id: 7, name: 'Picoro', sex: SEX['Male'], diagnosis: 'here diagnosis', date: '2020-07-02 23:59', status: SUBJECT_STATUS['Enrolled'] },
+  { id: 8, name: 'Ana', sex: SEX['Female'], diagnosis: 'here diagnosis', date: '2024-01-20 15:55', status: SUBJECT_STATUS['Enrolled'] },
+  { id: 9, name: 'Bibian', sex: SEX['Female'], diagnosis: 'here diagnosis', date: '2021-09-23 09:23', status: SUBJECT_STATUS['Enrolled'] },
+  { id: 10, name: 'Naty', sex: SEX['Female'], diagnosis: 'here diagnosis', date: '2021-09-23 09:23', status: SUBJECT_STATUS['In Screening'] },
+  { id: 11, name: 'Osmani', sex: SEX['Male'], diagnosis: 'here diagnosis', date: '2021-09-23 09:23', status: SUBJECT_STATUS['In Screening'] },
+  { id: 12, name: 'Milo', sex: SEX['Male'], diagnosis: 'here diagnosis', date: '2023-10-18 10:56', status: SUBJECT_STATUS['Failed'] },
+  { id: 13, name: 'Putin', sex: SEX['Male'], diagnosis: 'here diagnosis', date: '2020-07-02 23:59', status: SUBJECT_STATUS['Enrolled'] },
+  { id: 14, name: 'Melo', sex: SEX['Male'], diagnosis: 'here diagnosis', date: '2024-01-20 15:55', status: SUBJECT_STATUS['Failed'] },
+  { id: 15, name: 'Gustavo', sex: SEX['Male'], diagnosis: 'here diagnosis', date: '2021-09-23 09:23', status: SUBJECT_STATUS['Failed'] },
+  { id: 16, name: 'Tita', sex: SEX['Female'], diagnosis: 'here diagnosis', date: '2023-10-18 10:56', status: SUBJECT_STATUS['Failed'] },
+  { id: 17, name: 'Paty', sex: SEX['Female'], diagnosis: 'here diagnosis', date: '2020-07-02 23:59', status: SUBJECT_STATUS['Enrolled'] },
+  { id: 18, name: 'Ashly', sex: SEX['Female'], diagnosis: 'here diagnosis', date: '2024-01-20 15:55', status: SUBJECT_STATUS['Enrolled'] },
+  { id: 19, name: 'Benito', sex: SEX['Male'], diagnosis: 'here diagnosis', date: '2021-09-23 09:23', status: SUBJECT_STATUS['Enrolled'] },
+  { id: 20, name: 'Nelly', sex: SEX['Female'], diagnosis: 'here diagnosis', date: '2021-09-23 09:23', status: SUBJECT_STATUS['In Screening'] },
+  { id: 21, name: 'Oskar', sex: SEX['Male'], diagnosis: 'here diagnosis', date: '2021-09-23 09:23', status: SUBJECT_STATUS['In Screening'] },
+]
