@@ -11,14 +11,26 @@ export const createSubject = async (req: Request, res: Response) => res
 
 export const updateSubject = async (req: Request, res: Response) => {
     const { id } = req.params || {};
-    res
-      .status(200)
-      .json(await changeSubject(parseInt(id), req.body));
+    try {
+      return res
+        .status(200)
+        .json(await changeSubject(parseInt(id), req.body));
+    }
+    catch(error) {
+      return res
+        .sendStatus(400)
+    }
 }
 
 export const deleteSubject = async (req: Request, res: Response) => {
     const { id } = req.params || {};
-    res
-      .status(200)
-      .json(await removeSubject(parseInt(id)));
+    try {
+      return res
+        .status(200)
+        .json(await removeSubject(parseInt(id)));
+    }
+    catch(error) {
+      return res
+        .sendStatus(400)
+    }
 }

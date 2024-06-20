@@ -9,8 +9,8 @@ export const getByPage = async ({
   diagnosis = '',
   date = '',
   status = '',
-  skip = 0,
-  take = DEFAULT_PAGE_SIZE
+  skip = '',
+  take = ''
 }) => {
   console.debug({name, sex, diagnosis, date, status, skip, take })
   let filtered = [ ...subjects, ];
@@ -25,7 +25,12 @@ export const getByPage = async ({
       filtered = filtered.filter(o => o[key] === filters[key])
       console.debug('filtered >', filtered)
     }
-    return await Promise.resolve(filtered.slice(skip, take));
+    const from = parseInt(skip) || 0;
+    const to = from + (parseInt(take) || DEFAULT_PAGE_SIZE);
+    return await Promise.resolve({
+      list: filtered.slice(from, to),
+      totalRows: filtered.length,
+    });
   }
   catch (error) {
     return { error: error.message };
@@ -47,28 +52,33 @@ export const addSubject = async(subject: Partial<Subject>) => {
 export const changeSubject = async(id: number, subject: Partial<Subject>) => {
   try {
     const foundIndex = subjects.findIndex(o => o.id === id);
-    if (!foundIndex) {
-      return { error: 'Subject not found' }
+    if (foundIndex < 0) {
+      const message = 'Subject not found';
+      console.error(`${message}: ${id}`);
+      throw new Error(message);
     }
     subjects[foundIndex] = { ...subjects[foundIndex], ...subject }
     return await Promise.resolve(subjects[foundIndex])
   }
   catch(error) {
-    return { error: error.message };
+    await Promise.reject(error.message);
   }
 };
 
 export const removeSubject = async(id: number) => {
   try {
     const foundIndex = subjects.findIndex(o => o.id === id);
-    if (!foundIndex) {
-      return { error: 'Subject not found' }
+    if (foundIndex < 0) {
+      const message = 'Subject not found';
+      console.error(`${message}: ${id}`);
+      throw new Error(message);
     }
-    subjects.splice(foundIndex, 1)
-    return await Promise.resolve()
+    const deleted = subjects.splice(foundIndex, 1)
+    return await Promise.resolve(deleted)
   }
   catch(error) {
-    return { error: error.message };
+    console.error(`Deleting subject ${id} - ${error.message}`)
+    await Promise.reject(error.message);
   }
 };
 

@@ -1,7 +1,4 @@
 import express, { Express, Request, Response } from 'express';
-// import http from 'http';
-// import compression from 'compression';
-// import cookieParser from 'cookie-parser';
 import addCors from "./middlewares/cors";
 // import addInvalidUrlMiddleware from './middlewares/invalidUrls';
 import addBodyParser from './middlewares/bodyParser';
