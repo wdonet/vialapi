@@ -12,7 +12,6 @@ export const getByPage = async ({
   skip = '',
   take = ''
 }) => {
-  console.debug({name, sex, diagnosis, date, status, skip, take })
   let filtered = [ ...subjects, ];
   const filters = { name, sex, diagnosis, date, status };
   try {
@@ -23,7 +22,6 @@ export const getByPage = async ({
       }
       // @ts-ignore FIXME
       filtered = filtered.filter(o => o[key] === filters[key])
-      console.debug('filtered >', filtered)
     }
     const from = parseInt(skip) || 0;
     const to = from + (parseInt(take) || DEFAULT_PAGE_SIZE);
