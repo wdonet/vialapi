@@ -26,7 +26,7 @@ export const deleteSubject = async (req: Request, res: Response) => {
     const { id } = req.params || {};
     try {
       return res
-        .status(200)
+        .status(204)
         .json(await removeSubject(parseInt(id)));
     }
     catch(error) {

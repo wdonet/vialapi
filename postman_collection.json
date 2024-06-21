@@ -1,0 +1,126 @@
+{
+	"info": {
+		"_postman_id": "5333fd84-fba8-45e7-8625-9730571f4d8a",
+		"name": "vial",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30404804",
+		"_collection_link": "https://csp-derbysoft.postman.co/workspace/CSP~8e3742b1-b67d-4c97-9d25-eb2f46737637/collection/30404804-5333fd84-fba8-45e7-8625-9730571f4d8a?action=share&source=collection_link&creator=30404804"
+	},
+	"item": [
+		{
+			"name": "/subjects",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:4000/subjects?skip=0&name=Maru",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"subjects"
+					],
+					"query": [
+						{
+							"key": "skip",
+							"value": "0"
+						},
+						{
+							"key": "name",
+							"value": "Maru"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/subjects",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"name\": \"Maru\",\n        \"sex\": \"FEMALE\",\n        \"diagnosis\": \"Maru diagnosis\",\n        \"date\": \"2024-06-20 14:03\",\n        \"status\": \"Enrolled\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/subjects",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"subjects"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/subjects",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\n        \"name\": \"Mario\",\n        \"sex\": \"MALE\",\n        \"diagnosis\": \"Mario diagnosis\",\n        \"date\": \"2024-06-20 14:03\",\n        \"status\": \"Failed\"\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/subjects/22",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"subjects",
+						"22"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "/subjects",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:4000/subjects/22",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "4000",
+					"path": [
+						"subjects",
+						"22"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
